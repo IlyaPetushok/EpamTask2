@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <element name="tarifs">
+        <complexType>
+            <sequence>
+                <element name="tarif" type="tarif" maxOccurs="10"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="tarif">
+        <sequence>
+            <element name="name_tarif" type="xs:string"/>
+            <element name="payroll" type="xs:double"/>
+            <element name="cost_connect_tarif" type="xs:double"/>
+            <element name="data_connect" type="xs:dateTime"/>
+            <element name="internet" type="internet"/>
+            <element name="connect_methods" type="methods"/>
+        </sequence>
+        <attribute name="id" type="id"/>
+        <attribute name="operator_name" type="xs:string"/>
+    </complexType>
+
+    <complexType name="internet">
+        <sequence>
+            <element name="quantity_free_mg" type="xs:integer"/>
+            <element name="price_for_roaming" type="xs:double"/>
+            <element name="price_add_mg" type="xs:double"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="methods">
+        <sequence>
+            <element name="price_inside_net" type="xs:double"/>
+            <element name="price_outside_net" type="xs:double"/>
+            <element name="price_for_sms" type="xs:double"/>
+            <element name="price_call_statsion" type="xs:double"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="id">
+        <restriction base="ID">
+            <pattern value="^(375)((33)|(44)|(25))\d{7}"/>
+        </restriction>
+    </simpleType>
+
+
+
+</schema>

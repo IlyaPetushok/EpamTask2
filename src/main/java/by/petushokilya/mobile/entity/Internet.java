@@ -3,38 +3,29 @@ package by.petushokilya.mobile.entity;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Internet extends AbstractTarif{
-    private int minSpeedInternet;
-    private int maxSpeedInternet;
+public class Internet extends AbstractTarif {
     private int quantityFreeMgInMonth;
+    private double priceForRoaming;
     private double priceFor1000Mg;
-    private double priceForMaxSpeedOnHour;
 
-
-    public Internet(String id, String nameTarif, Operator operator, double payroll, double costConnectForTarif, LocalDateTime dataConnect, int minSpeedInternet, int maxSpeedInternet, int quantityFreeMgInMonth, double priceFor1000Mg, double priceForMaxSpeedOnHour) {
+    public Internet(String id, String nameTarif, Operator operator, double payroll,
+                    double costConnectForTarif, LocalDateTime dataConnect,
+                    int quantityFreeMgInMonth, double priceForRoaming,
+                    double priceFor1000Mg) {
         super(id, nameTarif, operator, payroll, costConnectForTarif, dataConnect);
-        this.minSpeedInternet = minSpeedInternet;
-        this.maxSpeedInternet = maxSpeedInternet;
         this.quantityFreeMgInMonth = quantityFreeMgInMonth;
+        this.priceForRoaming = priceForRoaming;
         this.priceFor1000Mg = priceFor1000Mg;
-        this.priceForMaxSpeedOnHour = priceForMaxSpeedOnHour;
     }
 
-    public int getMinSpeedInternet() {
-        return minSpeedInternet;
+    public double getPriceForRoaming() {
+        return priceForRoaming;
     }
 
-    public void setMinSpeedInternet(int minSpeedInternet) {
-        this.minSpeedInternet = minSpeedInternet;
+    public void setPriceForRoaming(double priceForRoaming) {
+        this.priceForRoaming = priceForRoaming;
     }
 
-    public int getMaxSpeedInternet() {
-        return maxSpeedInternet;
-    }
-
-    public void setMaxSpeedInternet(int maxSpeedInternet) {
-        this.maxSpeedInternet = maxSpeedInternet;
-    }
 
     public int getQuantityFreeMgInMonth() {
         return quantityFreeMgInMonth;
@@ -52,28 +43,17 @@ public class Internet extends AbstractTarif{
         this.priceFor1000Mg = priceFor1000Mg;
     }
 
-    public double getPriceForMaxSpeedOnHour() {
-        return priceForMaxSpeedOnHour;
-    }
-
-    public void setPriceForMaxSpeedOnHour(double priceForMaxSpeedOnHour) {
-        this.priceForMaxSpeedOnHour = priceForMaxSpeedOnHour;
-    }
-
     @Override
     public String toString() {
         return "Internet{" +
-                "minSpeedInternet=" + minSpeedInternet +
-                ", maxSpeedInternet=" + maxSpeedInternet +
-                ", quantityFreeMgInMonth=" + quantityFreeMgInMonth +
+                "quantityFreeMgInMonth=" + quantityFreeMgInMonth +
+                ", priceForRoaming=" + priceForRoaming +
                 ", priceFor1000Mg=" + priceFor1000Mg +
-                ", priceForMaxSpeedOnHour=" + priceForMaxSpeedOnHour +
                 '}';
     }
 
-
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), minSpeedInternet, maxSpeedInternet, quantityFreeMgInMonth, priceFor1000Mg, priceForMaxSpeedOnHour);
+        return Objects.hash(super.hashCode(), quantityFreeMgInMonth, priceForRoaming, priceFor1000Mg);
     }
 }

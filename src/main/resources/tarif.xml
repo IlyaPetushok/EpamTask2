@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tarifs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="tarif.xsd">
+    <tarif id="375333100107" operator_name="MTC">
+        <name_tarif>Super_Max_50</name_tarif>
+        <payroll>38.22</payroll>
+        <cost_connect_tarif>5.0</cost_connect_tarif>
+        <data_connect>2020-06-18T18:06:21</data_connect>
+        <internet>
+            <quantity_free_mg>50000</quantity_free_mg>
+            <price_for_roaming>3.5</price_for_roaming>
+            <price_add_mg>1.2</price_add_mg>
+        </internet>
+        <connect_methods>
+            <price_inside_net>0.05</price_inside_net>
+            <price_outside_net>0.9</price_outside_net>
+            <price_for_sms>0.07</price_for_sms>
+            <price_call_statsion>0.12</price_call_statsion>
+        </connect_methods>
+    </tarif>
+
+    <tarif id="375443320019" operator_name="A1">
+        <name_tarif>Comfort_M</name_tarif>
+        <payroll>25.51</payroll>
+        <cost_connect_tarif>4.0</cost_connect_tarif>
+        <data_connect>2010-11-08T11:54:56</data_connect>
+        <internet>
+            <quantity_free_mg>20000</quantity_free_mg>
+            <price_for_roaming>1.5</price_for_roaming>
+            <price_add_mg>2.1</price_add_mg>
+        </internet>
+        <connect_methods>
+            <price_inside_net>0.04</price_inside_net>
+            <price_outside_net>0.7</price_outside_net>
+            <price_for_sms>0.06</price_for_sms>
+            <price_call_statsion>0.09</price_call_statsion>
+        </connect_methods>
+    </tarif>
+
+    <tarif id="375254350000" operator_name="Life">
+        <name_tarif>More Money</name_tarif>
+        <payroll>31.51</payroll>
+        <cost_connect_tarif>4.6</cost_connect_tarif>
+        <data_connect>2022-01-08T21:14:02</data_connect>
+        <internet>
+            <quantity_free_mg>450000</quantity_free_mg>
+            <price_for_roaming>2.5</price_for_roaming>
+            <price_add_mg>4.1</price_add_mg>
+        </internet>
+        <connect_methods>
+            <price_inside_net>0.06</price_inside_net>
+            <price_outside_net>0.82</price_outside_net>
+            <price_for_sms>0.04</price_for_sms>
+            <price_call_statsion>0.09</price_call_statsion>
+        </connect_methods>
+    </tarif>
+</tarifs>

@@ -1,7 +1,7 @@
 package by.petushokilya.mobile.entity;
 
 public enum Roaming {
-    ON("Can use roaming"),OFF("Can't use roaming");
+    ON("Can use roaming"), OFF("Can't use roaming");
 
     private String status;
 
@@ -13,9 +13,9 @@ public enum Roaming {
         return status;
     }
 
-    public Roaming getStatusRoaming(String name){
+    public Roaming getStatusRoaming(String name) {
         for (Roaming roaming : Roaming.values()) {
-            if(name.equals(roaming.getStatus())){
+            if (name.equals(roaming.getStatus())) {
                 return roaming;
             }
         }

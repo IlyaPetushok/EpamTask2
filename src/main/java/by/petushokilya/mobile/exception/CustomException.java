@@ -1,6 +1,6 @@
 package by.petushokilya.mobile.exception;
 
-public class CustomException extends Exception{
+public class CustomException extends Exception {
     public CustomException() {
         super();
     }
