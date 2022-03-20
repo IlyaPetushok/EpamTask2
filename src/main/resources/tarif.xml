@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <tarifs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="tarif.xsd">
-    <tarif id="375333100107" operator_name="MTC">
+    <tarif id="375333100107" operator_name="mtc">
         <name_tarif>Super_Max_50</name_tarif>
         <payroll>38.22</payroll>
         <cost_connect_tarif>5.0</cost_connect_tarif>
@@ -37,13 +37,13 @@
         </connect_methods>
     </tarif>
 
-    <tarif id="375254350000" operator_name="Life">
+    <tarif id="375254350000" operator_name="life">
         <name_tarif>More Money</name_tarif>
         <payroll>31.51</payroll>
         <cost_connect_tarif>4.6</cost_connect_tarif>
         <data_connect>2022-01-08T21:14:02</data_connect>
         <internet>
-            <quantity_free_mg>450000</quantity_free_mg>
+            <quantity_free_mg>45000</quantity_free_mg>
             <price_for_roaming>2.5</price_for_roaming>
             <price_add_mg>4.1</price_add_mg>
         </internet>

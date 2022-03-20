@@ -13,7 +13,7 @@ public enum Operator {
         return operator;
     }
 
-    public Operator getNameOperator(String name) {
+    public static Operator getNameOperator(String name) {
         for (Operator operator : Operator.values()) {
             if (name.equals(operator.getOperator())) {
                 return operator;

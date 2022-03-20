@@ -8,6 +8,9 @@ public class Internet extends AbstractTarif {
     private double priceForRoaming;
     private double priceFor1000Mg;
 
+    public Internet() {
+    }
+
     public Internet(String id, String nameTarif, Operator operator, double payroll,
                     double costConnectForTarif, LocalDateTime dataConnect,
                     int quantityFreeMgInMonth, double priceForRoaming,

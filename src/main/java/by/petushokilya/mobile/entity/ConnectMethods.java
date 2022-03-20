@@ -9,6 +9,9 @@ public class ConnectMethods extends AbstractTarif {
     private double priceForCallStatsionar;
     private double priceForSms;
 
+    public ConnectMethods() {
+    }
+
     public ConnectMethods(String id, String nameTarif, Operator operator, double payroll, double costConnectForTarif,
                           LocalDateTime dataConnect, double priceInsideNet, double priceOutsideNet, double priceForCallStatsionar,
                           double priceForSms) {

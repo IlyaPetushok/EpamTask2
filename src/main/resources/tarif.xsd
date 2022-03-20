@@ -10,31 +10,31 @@
 
     <complexType name="tarif">
         <sequence>
-            <element name="name_tarif" type="xs:string"/>
-            <element name="payroll" type="xs:double"/>
-            <element name="cost_connect_tarif" type="xs:double"/>
-            <element name="data_connect" type="xs:dateTime"/>
+            <element name="name_tarif" type="name-tarif"/>
+            <element name="payroll" type="double-positive"/>
+            <element name="cost_connect_tarif" type="double-positive"/>
+            <element name="data_connect" type="data-time"/>
             <element name="internet" type="internet"/>
             <element name="connect_methods" type="methods"/>
         </sequence>
         <attribute name="id" type="id"/>
-        <attribute name="operator_name" type="xs:string"/>
+        <attribute name="operator_name" type="operator"/>
     </complexType>
 
     <complexType name="internet">
         <sequence>
-            <element name="quantity_free_mg" type="xs:integer"/>
-            <element name="price_for_roaming" type="xs:double"/>
-            <element name="price_add_mg" type="xs:double"/>
+            <element name="quantity_free_mg" type="integer-positive"/>
+            <element name="price_for_roaming" type="double-positive"/>
+            <element name="price_add_mg" type="double-positive"/>
         </sequence>
     </complexType>
 
     <complexType name="methods">
         <sequence>
-            <element name="price_inside_net" type="xs:double"/>
-            <element name="price_outside_net" type="xs:double"/>
-            <element name="price_for_sms" type="xs:double"/>
-            <element name="price_call_statsion" type="xs:double"/>
+            <element name="price_inside_net" type="double-positive"/>
+            <element name="price_outside_net" type="double-positive"/>
+            <element name="price_for_sms" type="double-positive"/>
+            <element name="price_call_statsion" type="double-positive"/>
         </sequence>
     </complexType>
 
@@ -44,6 +44,39 @@
         </restriction>
     </simpleType>
 
+    <simpleType name="operator">
+        <restriction base="xs:string">
+            <enumeration value="mtc"/>
+            <enumeration value="life"/>
+            <enumeration value="A1"/>
+            <enumeration value="beeline"/>
+        </restriction>
+    </simpleType>
 
+    <simpleType name="name-tarif">
+        <restriction base="xs:string">
+            <minLength value="1"/>
+            <maxLength value="20"/>
+        </restriction>
+    </simpleType>
 
+    <simpleType name="data-time">
+        <restriction base="xs:dateTime">
+            <pattern value="\d{4}(\-\d{2}){2}T(\d{2}\:){2}\d{2}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="double-positive">
+        <restriction base="xs:double">
+            <minInclusive value="0.0"/>
+            <maxInclusive value="1000.0"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="integer-positive">
+        <restriction base="xs:integer">
+            <minInclusive value="100"/>
+            <maxInclusive value="100000"/>
+        </restriction>
+    </simpleType>
 </schema>
