@@ -4,6 +4,9 @@ import by.petushokilya.mobile.entity.AbstractTarif;
 import by.petushokilya.mobile.entity.ConnectMethods;
 import by.petushokilya.mobile.entity.Internet;
 import by.petushokilya.mobile.entity.Operator;
+import by.petushokilya.mobile.exception.XmlException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -15,6 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TarifHandler extends DefaultHandler {
+    private static final Logger logger = LogManager.getLogger(TarifHandler.class.getName());
     private Set<AbstractTarif> tarif;
     private EnumSet<XmlTarifTag> xmlTags;
 
@@ -45,12 +49,10 @@ public class TarifHandler extends DefaultHandler {
             currentTarif.setId(id);
             currentTarif.setOperator(Operator.getNameOperator(operatorName));
         } else {
-            //error
             XmlTarifTag temp = XmlTarifTag.valueOf(qName.toUpperCase().replace("_", ""));
             if (xmlTags.contains(temp)) {
                 currentXmlTag = temp;
             }
-
         }
     }
 
@@ -62,6 +64,7 @@ public class TarifHandler extends DefaultHandler {
         }
 
     }
+
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         String data = new String(ch, start, length);
@@ -74,8 +77,8 @@ public class TarifHandler extends DefaultHandler {
                 case DATACONNECT -> currentTarif.setDataConnect(LocalDateTime.parse(data));
                 case QUANTITYFREEMG -> {
 
-                        internetForTarif = (Internet) currentTarif;
-                        internetForTarif.setQuantityFreeMgInMonth(Integer.parseInt(data));
+                    internetForTarif = (Internet) currentTarif;
+                    internetForTarif.setQuantityFreeMgInMonth(Integer.parseInt(data));
 
                 }
                 case PRICEFORROAMING -> {
@@ -114,7 +117,9 @@ public class TarifHandler extends DefaultHandler {
                         connectMethods.setPriceForCallStatsionar(Double.parseDouble(data));
                     }
                 }
-//                default ->
+                default ->{
+                    logger.error("Unknown tag");
+                }
             }
         }
         currentXmlTag = null;

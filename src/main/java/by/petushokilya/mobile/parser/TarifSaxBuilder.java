@@ -32,11 +32,11 @@ public class TarifSaxBuilder extends AbstractTarifBuilder {
     }
 
     public void buildTarifsSet(String filename) throws XmlException {
-        try{
+        try {
             xmlReader.parse(filename);
-        }catch (IOException |SAXException exception){
-            logger.error("Mistake in parse method Sax",exception);
-            throw new XmlException("Mistake in parse method Sax",exception);
+        } catch (IOException | SAXException exception) {
+            logger.error("Mistake in parse method Sax", exception);
+            throw new XmlException("Mistake in parse method Sax", exception);
         }
     }
 }

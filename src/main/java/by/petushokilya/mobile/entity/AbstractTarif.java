@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public abstract class AbstractTarif {
+
     private String id;
     private String nameTarif;
     private Operator operator;
@@ -14,6 +15,7 @@ public abstract class AbstractTarif {
     public AbstractTarif() {
     }
 
+
     public AbstractTarif(String id, String nameTarif, Operator operator, double payroll, double costConnectForTarif, LocalDateTime dataConnect) {
         this.id = id;
         this.nameTarif = nameTarif;
@@ -22,6 +24,7 @@ public abstract class AbstractTarif {
         this.costConnectForTarif = costConnectForTarif;
         this.dataConnect = dataConnect;
     }
+
 
     public String getId() {
         return id;
